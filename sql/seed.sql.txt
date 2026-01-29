@@ -1,0 +1,39 @@
+INSERT INTO categorias (nombre) VALUES 
+('Marcos Metálicos'), 
+('Marcos de Acetato'), 
+('Lentes de Sol'), 
+('Clip-on');
+
+INSERT INTO productos (nombre, precio, stock, categoria_id) VALUES 
+('Marco metálico redondo c/ capa Clarity', 45000.00, 15, 1),
+('Marco metálico simple Angelo Falcony 1', 38000.00, 3, 1), -- Stock bajo
+('Marco metálico simple Angelo Falcony 2', 38000.00, 12, 1),
+('Marco metálico c/ capa mujer Clarity', 42000.00, 8, 1),
+('Marco acetato Rolett Black', 35000.00, 20, 2),
+('Lentes de Sol Polarizados Linea Vigo', 55000.00, 0, 3), -- Agotado oara posterior pruebas
+('Clip-on Magnético 3 en 1', 48000.00, 10, 4);
+
+INSERT INTO clientes (nombre, email) VALUES 
+('Juan Pérez', 'juan.perez@gmail.com'),
+('María García', 'm.garcia@gmail.com'),
+('Diego González', 'dgonzalez@gmail.com'),
+('Ana López', 'alopez@hotmail.com'),
+('Francisco lopez', 'panchomalo@gmail.com'),
+('Armando Lara', 'arlarita@hotmail.com'),
+('Valentina Rosales', 'valen334@live.com');
+
+-- P1 Juan compra lente lejos y cerca
+INSERT INTO pedidos (cliente_id, fecha, total) VALUES (1, '2025-12-15 10:30:00', 83000.00);
+INSERT INTO detalle (pedido_id, producto_id, cantidad, precio_unitario) VALUES 
+(1, 1, 1, 45000.00),
+(1, 2, 1, 38000.00);
+
+-- P2 maria compra el mismo lente que Juan
+INSERT INTO pedidos (cliente_id, fecha, total) VALUES (2, '2025-12-20 15:45:00', 45000.00);
+INSERT INTO detalle (pedido_id, producto_id, cantidad, precio_unitario) VALUES 
+(2, 1, 1, 45000.00);
+
+-- P3 diego compra 3 acetatos
+INSERT INTO pedidos (cliente_id, fecha, total) VALUES (3, '2026-01-05 11:00:00', 105000.00);
+INSERT INTO detalle (pedido_id, producto_id, cantidad, precio_unitario) VALUES 
+(3, 5, 3, 35000.00);
